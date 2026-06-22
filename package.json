@@ -1,0 +1,38 @@
+{
+  "name": "rag-llm",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace @rag-llm/api",
+    "dev": "npm run dev --workspace @rag-llm/web",
+    "build": "npm run build --workspace @rag-llm/web",
+    "db:migrate": "npm run migrate --workspace @rag-llm/db",
+    "docker:down": "docker compose down",
+    "docker:up": "docker compose up -d",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test:api && npm run test:worker && npm run test:sharding",
+    "test:api": "npm run test:integration --workspace @rag-llm/api",
+    "test:e2e": "playwright test",
+    "test:sharding": "DATABASE_URL=postgres://rag:rag@localhost:55432/rag_llm npm run test:sharding --workspace @rag-llm/db",
+    "test:worker": "npm run test:worker --workspace @rag-llm/worker",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^15.3.1",
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^25.9.3",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "eslint": "^9.25.1",
+    "eslint-config-next": "^15.3.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}

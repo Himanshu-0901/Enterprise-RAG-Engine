@@ -1,0 +1,26 @@
+{
+  "name": "@rag-llm/api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --env-file=../../.env src/index.ts",
+    "lint": "eslint . --max-warnings=0",
+    "test:integration": "node --import tsx --test src/tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1040.0",
+    "@hono/node-server": "^1.14.1",
+    "@rag-llm/db": "0.1.0",
+    "@rag-llm/rag": "0.1.0",
+    "@rag-llm/shared": "0.1.0",
+    "bullmq": "^5.76.4",
+    "hono": "^4.7.8",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

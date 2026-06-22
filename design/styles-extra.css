@@ -1,0 +1,97 @@
+/* Additional styles to fill gaps used by views */
+
+.bar-axis { font-family: var(--font-mono); font-size: 10px; color: var(--text-4); display: flex; justify-content: space-between; padding-top: 6px; border-top: 1px solid var(--border); }
+
+.upload-zone {
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--r-md);
+  padding: 28px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--bg-elev);
+  color: var(--text-3);
+}
+.upload-zone:hover { border-color: var(--text-2); background: var(--bg-sunken); color: var(--text-2); }
+.upload-zone.large { padding: 48px 24px; }
+
+/* Onboarding launch mark */
+.onb-launch-mark {
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  margin: 0 auto;
+  display: grid; place-items: center;
+  color: white;
+}
+
+/* Page-style doc viewer overrides */
+.doc-highlight {
+  border-left: 3px solid var(--tenant-primary);
+  background: color-mix(in srgb, var(--tenant-primary) 7%, transparent);
+  padding: 10px 14px;
+  margin: 14px 0;
+  border-radius: 0 4px 4px 0;
+}
+.doc-highlight-meta {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.doc-snippets { display: flex; flex-direction: column; gap: 12px; }
+.doc-snippet {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 14px 16px;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+.doc-snippet-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 8px;
+}
+.doc-empty {
+  text-align: center; color: var(--text-4);
+  font-family: var(--font-mono); font-size: 11px;
+  padding: 16px;
+}
+
+/* Tenant switcher overlay (kept simple) */
+.persona-bar {
+  position: fixed; top: 12px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; align-items: center; gap: 4px;
+  padding: 4px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  z-index: 60;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+.persona-btn {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+.persona-btn.active { background: var(--text); color: var(--bg); }
+.persona-btn:not(.active):hover { color: var(--text); }
+
+/* Inline citation as text token */
+.cite-inline {
+  border: none; background: transparent;
+  color: var(--tenant-primary);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+.cite-inline:hover { background: color-mix(in srgb, var(--tenant-primary) 12%, transparent); }
